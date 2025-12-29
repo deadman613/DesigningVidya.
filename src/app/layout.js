@@ -1,3 +1,4 @@
+import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "../styles/globals.css";
 
@@ -34,7 +35,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <script src="https://cdn.tailwindcss.com"></script>
+        <Script src="https://cdn.tailwindcss.com" strategy="beforeInteractive" />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} app-shell`}>
         <a href="#main-content" className="skip-link">

@@ -1,0 +1,392 @@
+/* Courses Section Styles */
+.section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+.backgroundGlow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, hsla(280, 80%, 55%, 0.15), transparent 70%);
+  opacity: 0.3;
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 1024px) {
+  .header {
+    margin-bottom: 4rem;
+  }
+}
+
+.label {
+  color: hsl(280, 80%, 55%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 1024px) {
+  .label {
+    font-size: 0.875rem;
+  }
+}
+
+.heading {
+  font-size: 1.875rem;
+  font-weight: 900;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.headingWhite {
+  color: hsl(0, 0%, 98%);
+}
+
+.headingGradient {
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  color: hsl(0, 0%, 65%);
+  font-size: 1rem;
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 1024px) {
+  .description {
+    font-size: 1.125rem;
+  }
+}
+
+/* Course Grid */
+.courseGrid {
+  display: grid;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .courseGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .courseGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
+
+/* Course Card */
+.courseCard {
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.6) 0%, hsla(0, 0%, 6%, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(0, 0%, 18%, 0.5);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  cursor: default;
+  transition: all 0.3s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .courseCard {
+    border-radius: 1rem;
+    padding: 2rem;
+  }
+}
+
+.courseCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.08), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.courseCard:hover::before {
+  left: 100%;
+}
+
+.courseCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsla(45, 100%, 50%, 0.3);
+  box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.4), 0 0 30px hsla(45, 100%, 50%, 0.15);
+}
+
+.cardHead {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: transparent;
+  border: none;
+  color: inherit;
+  padding: 0;
+  cursor: pointer;
+  text-align: left;
+}
+
+.headings {
+  flex: 1;
+}
+
+.mobileSubline {
+  display: inline-block;
+  font-size: 0.75rem;
+  color: hsl(0, 0%, 65%);
+}
+
+.toggleIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+  color: hsl(45, 100%, 50%);
+  transition: transform 0.3s ease;
+}
+
+.toggleIconOpen {
+  transform: rotate(90deg);
+}
+
+.iconWrapper {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.courseCard:hover .iconWrapper {
+  transform: scale(1.1);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: hsl(0, 0%, 5%);
+}
+
+@media (min-width: 1024px) {
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+.courseTitle {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 98%);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+@media (min-width: 1024px) {
+  .courseTitle {
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+  }
+}
+
+.courseCard:hover .courseTitle {
+  color: hsl(45, 100%, 50%);
+}
+
+.courseDesc {
+  color: hsl(0, 0%, 65%);
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-size: 0.875rem;
+}
+
+@media (min-width: 1024px) {
+  .courseDesc {
+    margin-bottom: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+/* Skills Tags */
+.skillsWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.cardBody {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease, opacity 0.25s ease, margin-top 0.25s ease;
+}
+
+.cardBodyOpen {
+  max-height: 600px;
+  opacity: 1;
+  margin-top: 1rem;
+}
+
+.courseCardOpen {
+  border-color: hsla(45, 100%, 50%, 0.35);
+}
+
+.skillTag {
+  padding: 0.25rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: 500;
+  border-radius: 9999px;
+  background-color: hsl(0, 0%, 12%);
+  color: hsl(0, 0%, 98%);
+}
+
+/* CTA Button */
+.courseBtn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background: transparent;
+  border: 1px solid hsl(45, 100%, 50%);
+  color: hsl(45, 100%, 50%);
+  padding: 0.625rem 1rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.courseBtn:hover {
+  background: hsl(45, 100%, 50%);
+  color: hsl(0, 0%, 5%);
+}
+
+.btnIcon {
+  width: 1rem;
+  height: 1rem;
+  transition: transform 0.3s;
+}
+
+.courseBtn:hover .btnIcon {
+  transform: translateX(4px);
+}
+
+/* View All Button */
+.viewAllWrapper {
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.viewAllBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  color: hsl(0, 0%, 5%);
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.viewAllBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 30px hsla(45, 100%, 50%, 0.4);
+}
+
+.viewAllIcon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Mobile accordion behavior */
+@media (min-width: 768px) {
+  .courseCard {
+    cursor: default;
+  }
+
+  .cardHead {
+    cursor: default;
+  }
+
+  .mobileSubline,
+  .toggleIcon {
+    display: none;
+  }
+
+  .cardBody,
+  .cardBodyOpen {
+    max-height: none;
+    opacity: 1;
+    overflow: visible;
+    margin-top: 1rem;
+  }
+}
+
+/* Gradient colors */
+.gradientPrimaryNeon { background: linear-gradient(135deg, hsl(45, 100%, 50%), hsl(160, 100%, 45%)); }
+.gradientNeonCyber { background: linear-gradient(135deg, hsl(160, 100%, 45%), hsl(200, 100%, 50%)); }
+.gradientCyberAccent { background: linear-gradient(135deg, hsl(200, 100%, 50%), hsl(280, 80%, 55%)); }
+.gradientAccentVibrant { background: linear-gradient(135deg, hsl(280, 80%, 55%), hsl(320, 80%, 50%)); }
+.gradientVibrantPrimary { background: linear-gradient(135deg, hsl(320, 80%, 50%), hsl(45, 100%, 50%)); }
+.gradientPrimaryElectric { background: linear-gradient(135deg, hsl(45, 100%, 50%), hsl(200, 100%, 60%)); }

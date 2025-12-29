@@ -1,0 +1,263 @@
+/* Stats Section Styles */
+.section {
+  padding: 3.5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+.backgroundGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, hsla(0, 0%, 12%, 0.2), hsl(0, 0%, 4%), hsla(0, 0%, 12%, 0.2));
+}
+
+.glowCircle1 {
+  position: absolute;
+  top: 25%;
+  left: 25%;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background-color: hsla(280, 80%, 55%, 0.05);
+  filter: blur(60px);
+}
+
+.glowCircle2 {
+  position: absolute;
+  bottom: 25%;
+  right: 25%;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: hsla(45, 100%, 50%, 0.05);
+  filter: blur(60px);
+}
+
+.topBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsla(45, 100%, 50%, 0.3), transparent);
+}
+
+.bottomBorder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsla(45, 100%, 50%, 0.3), transparent);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.label {
+  color: hsl(45, 100%, 50%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 0.875rem;
+  }
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+.headingWhite {
+  color: hsl(0, 0%, 98%);
+}
+
+.headingGradient {
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Stats Grid */
+.statsGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.7rem;
+  transition: all 0.7s ease-out;
+}
+
+@media (min-width: 768px) {
+  .statsGrid {
+    gap: 1.15rem;
+  }
+}
+
+.statsGridHidden {
+  opacity: 0;
+  transform: translateY(2rem);
+}
+
+.statsGridVisible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stat Card */
+.statCard {
+  background: linear-gradient(165deg, hsla(0, 0%, 14%, 0.6) 0%, hsla(0, 0%, 6%, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(0, 0%, 18%, 0.2);
+  border-radius: 1rem;
+  padding: 1rem;
+  text-align: center;
+  transition: all 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+.statCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.06), transparent);
+  transition: left 0.7s ease;
+  pointer-events: none;
+}
+
+.statCard:hover::before {
+  left: 150%;
+}
+
+.statCard:hover {
+  border-color: hsla(45, 100%, 50%, 0.2);
+  transform: translateY(-4px);
+}
+
+
+.iconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, hsla(45, 100%, 50%, 0.2), hsla(45, 100%, 50%, 0.1), hsla(280, 80%, 55%, 0.2));
+  margin-bottom: 0.75rem;
+  transition: all 0.5s ease-out;
+}
+
+@media (min-width: 768px) {
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.statCard:hover .iconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px hsla(45, 100%, 50%, 0.2);
+}
+
+
+.icon {
+  width: 1.45rem;
+  height: 1.45rem;
+  color: hsl(45, 100%, 50%);
+}
+
+@media (min-width: 768px) {
+  .icon {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+
+.statValue {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: hsl(0, 0%, 98%);
+  margin-bottom: 0.35rem;
+}
+
+@media (min-width: 640px) {
+  .statValue {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .statValue {
+    font-size: 3rem;
+  }
+}
+
+.valueGradient {
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.statLabel {
+  color: hsl(0, 0%, 65%);
+  font-size: 0.75rem;
+  font-weight: 500;
+}
+
+@media (min-width: 768px) {
+  .statLabel {
+    font-size: 0.875rem;
+  }
+}

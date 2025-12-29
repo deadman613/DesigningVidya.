@@ -1,0 +1,266 @@
+/* Journey Section Styles */
+.section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(to bottom, hsl(0, 0%, 4%), hsla(0, 0%, 12%, 0.1), hsl(0, 0%, 4%));
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+.topBorder {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsla(45, 100%, 50%, 0.3), transparent);
+}
+
+.bottomBorder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: linear-gradient(to right, transparent, hsla(45, 100%, 50%, 0.3), transparent);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.label {
+  color: hsl(45, 100%, 50%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 0.875rem;
+  }
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+.headingWhite {
+  color: hsl(0, 0%, 98%);
+}
+
+.headingGradient {
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Steps Grid */
+.stepsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .stepsGrid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 768px) {
+  .stepsGrid {
+    grid-template-columns: repeat(6, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+/* Step Card */
+.stepWrapper {
+  position: relative;
+}
+
+.stepCard {
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.6) 0%, hsla(0, 0%, 6%, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(0, 0%, 18%, 0.3);
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+  text-align: center;
+  height: 100%;
+  transition: all 0.5s ease-out;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .stepCard {
+    padding: 1.5rem;
+  }
+}
+
+.stepCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, hsla(0, 0%, 100%, 0.08), transparent);
+  transition: left 0.6s ease;
+  pointer-events: none;
+}
+
+.stepCard:hover::before {
+  left: 100%;
+}
+
+.stepCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsla(45, 100%, 50%, 0.3);
+  box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.4), 0 0 30px hsla(45, 100%, 50%, 0.15);
+}
+
+/* Step Number */
+.stepNumber {
+  position: absolute;
+  top: -0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.375rem 0.75rem;
+  border-radius: 9999px;
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsla(45, 100%, 50%, 0.8) 100%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 5%);
+  box-shadow: 0 10px 25px hsla(45, 100%, 50%, 0.3);
+}
+
+/* Icon */
+.iconWrapper {
+  width: 3.5rem;
+  height: 3.5rem;
+  margin: 1rem auto;
+  border-radius: 0.75rem;
+  background: linear-gradient(135deg, hsla(45, 100%, 50%, 0.2), hsla(45, 100%, 50%, 0.1), hsla(280, 80%, 55%, 0.2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.5s ease-out;
+}
+
+@media (min-width: 768px) {
+  .iconWrapper {
+    width: 4rem;
+    height: 4rem;
+  }
+}
+
+.stepCard:hover .iconWrapper {
+  transform: scale(1.1);
+  box-shadow: 0 10px 25px hsla(45, 100%, 50%, 0.2);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: hsl(45, 100%, 50%);
+}
+
+@media (min-width: 768px) {
+  .icon {
+    width: 1.75rem;
+    height: 1.75rem;
+  }
+}
+
+/* Content */
+.stepTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 98%);
+  margin-bottom: 0.5rem;
+  transition: color 0.3s;
+}
+
+@media (min-width: 768px) {
+  .stepTitle {
+    font-size: 1rem;
+  }
+}
+
+.stepCard:hover .stepTitle {
+  color: hsl(45, 100%, 50%);
+}
+
+.stepDesc {
+  font-size: 0.75rem;
+  color: hsl(0, 0%, 65%);
+  line-height: 1.5;
+}
+
+@media (min-width: 768px) {
+  .stepDesc {
+    font-size: 0.875rem;
+  }
+}
+
+/* Connector Line */
+.connector {
+  display: none;
+  position: absolute;
+  top: 50%;
+  right: -0.625rem;
+  width: 1.25rem;
+  height: 2px;
+  background: linear-gradient(to right, hsla(45, 100%, 50%, 0.5), transparent);
+}
+
+@media (min-width: 768px) {
+  .connector {
+    display: block;
+  }
+}

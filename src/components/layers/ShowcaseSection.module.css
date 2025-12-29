@@ -1,0 +1,346 @@
+/* Showcase Section Styles */
+.section {
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .section {
+    padding: 6rem 0;
+  }
+}
+
+.backgroundGradient {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, hsl(0, 0%, 4%), hsla(0, 0%, 12%, 0.05), hsl(0, 0%, 4%));
+}
+
+.glowCircle1 {
+  position: absolute;
+  top: 25%;
+  left: 0;
+  width: 16rem;
+  height: 16rem;
+  border-radius: 50%;
+  background-color: hsla(280, 80%, 55%, 0.05);
+  filter: blur(60px);
+}
+
+.glowCircle2 {
+  position: absolute;
+  bottom: 25%;
+  right: 0;
+  width: 12rem;
+  height: 12rem;
+  border-radius: 50%;
+  background-color: hsla(45, 100%, 50%, 0.05);
+  filter: blur(60px);
+}
+
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  position: relative;
+  z-index: 10;
+}
+
+/* Header */
+.header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .header {
+    margin-bottom: 3.5rem;
+  }
+}
+
+.label {
+  color: hsl(45, 100%, 50%);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .label {
+    font-size: 0.875rem;
+  }
+}
+
+.heading {
+  font-size: 1.5rem;
+  font-weight: 900;
+  margin-top: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 640px) {
+  .heading {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .heading {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+.headingWhite {
+  color: hsl(0, 0%, 98%);
+}
+
+.headingGradient {
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.description {
+  color: hsl(0, 0%, 65%);
+  font-size: 0.875rem;
+  max-width: 36rem;
+  margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+  .description {
+    font-size: 1rem;
+  }
+}
+
+/* Projects Grid */
+.projectsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 1024px) {
+  .projectsGrid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+/* Project Card */
+.projectCard {
+  position: relative;
+  cursor: pointer;
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.6) 0%, hsla(0, 0%, 6%, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(0, 0%, 18%, 0.3);
+  border-radius: 0.75rem;
+  overflow: hidden;
+  transition: all 0.5s ease-out;
+}
+
+.projectCard:hover {
+  transform: translateY(-6px) scale(1.02);
+  border-color: hsla(45, 100%, 50%, 0.3);
+  box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.4), 0 0 30px hsla(45, 100%, 50%, 0.15);
+}
+
+.imageWrapper {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.projectImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.7s ease-out;
+}
+
+.projectCard:hover .projectImage {
+  transform: scale(1.1);
+}
+
+/* Overlay */
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, hsl(0, 0%, 4%), hsla(0, 0%, 4%, 0.4), transparent);
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+@media (min-width: 768px) {
+  .overlay {
+    opacity: 0;
+  }
+  
+  .projectCard:hover .overlay {
+    opacity: 1;
+  }
+}
+
+/* Content */
+.content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  transition: all 0.5s ease-out;
+}
+
+@media (min-width: 768px) {
+  .content {
+    padding: 1.25rem;
+    opacity: 0;
+    transform: translateY(1rem);
+  }
+  
+  .projectCard:hover .content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.category {
+  color: hsl(45, 100%, 50%);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+@media (min-width: 768px) {
+  .category {
+    font-size: 0.875rem;
+  }
+}
+
+.projectTitle {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: hsl(0, 0%, 98%);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .projectTitle {
+    font-size: 1.125rem;
+  }
+}
+
+.studentName {
+  display: none;
+  color: hsl(0, 0%, 65%);
+  font-size: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .studentName {
+    display: block;
+  }
+}
+
+/* Action Buttons */
+.actionButtons {
+  display: none;
+  gap: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+@media (min-width: 768px) {
+  .actionButtons {
+    display: flex;
+  }
+}
+
+.actionBtn {
+  padding: 0.625rem;
+  border-radius: 9999px;
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.6) 0%, hsla(0, 0%, 6%, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(0, 0%, 18%, 0.3);
+  color: hsl(45, 100%, 50%);
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.actionBtn:hover {
+  background-color: hsl(45, 100%, 50%);
+  color: hsl(0, 0%, 5%);
+  transform: scale(1.1);
+}
+
+.actionIcon {
+  width: 1rem;
+  height: 1rem;
+}
+
+/* Badge */
+.badge {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.6) 0%, hsla(0, 0%, 6%, 0.8) 100%);
+  backdrop-filter: blur(20px);
+  border: 1px solid hsla(0, 0%, 18%, 0.3);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: hsl(0, 0%, 98%);
+  transition: opacity 0.3s;
+}
+
+@media (min-width: 768px) {
+  .projectCard:hover .badge {
+    opacity: 0;
+  }
+}
+
+/* View More Button */
+.viewMoreWrapper {
+  text-align: center;
+  margin-top: 2.5rem;
+}
+
+@media (min-width: 768px) {
+  .viewMoreWrapper {
+    margin-top: 3rem;
+  }
+}
+
+.viewMoreBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, hsl(45, 100%, 50%) 0%, hsl(35, 100%, 45%) 100%);
+  color: hsl(0, 0%, 5%);
+  padding: 0.875rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 10px 30px hsla(45, 100%, 50%, 0.3);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.viewMoreBtn:hover {
+  transform: scale(1.05);
+  box-shadow: 0 15px 40px hsla(45, 100%, 50%, 0.4);
+}
+
+.viewMoreIcon {
+  width: 1rem;
+  height: 1rem;
+}
