@@ -19,10 +19,10 @@ export default function Home() {
       <main id="main-content">
         <HeroSection />
         <StatsSection />
+        <AboutSection />
         <ProcessInfrastructure />
         <TestimonialsSection />
         <CoursesSection />
-        <AboutSection />
         <PlacementsSection />
         <ShowcaseSection />
         <CarouselShowcase />

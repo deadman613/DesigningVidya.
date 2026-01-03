@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
+import Image from "next/image";
 import {
   Monitor,
   Video,
@@ -43,32 +44,50 @@ const infrastructure = [
     icon: Monitor,
     title: "Modern Workstations",
     description: "High-spec systems tuned for VFX, design, and editing.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1498050108023-c5249f4df085?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Studio workstation setup",
   },
   {
     icon: Video,
     title: "Studio-Style Classrooms",
     description: "Immersive, production-like environments for hands-on learning.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1523240795612-9a054b0db644?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Classroom infrastructure",
   },
   {
     icon: Users,
     title: "Small Batch Learning",
     description: "Focused cohorts so mentors can go deep on your work.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Students learning together",
   },
   {
     icon: MessageSquare,
     title: "Collaboration Zones",
     description: "Spaces built for pair sessions, critiques, and team builds.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Collaboration space",
   },
   {
     icon: Coffee,
     title: "Creative Comforts",
     description: "Acoustic-treated rooms, lounge corners, and good lighting.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1522199755839-a2bacb67c546?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Comfortable creative lounge",
   },
   {
     icon: Briefcase,
     title: "Real Office Vibe",
     description:
       "Processes that mirror agency and studio delivery rhythms.",
+    imageSrc:
+      "https://images.unsplash.com/photo-1556761175-b413da4baf72?auto=format&fit=crop&w=1600&q=80",
+    imageAlt: "Office-style environment",
   },
 ];
 
@@ -150,10 +169,21 @@ function InfraCard({ item, index }) {
       className={styles.infraCard}
       style={{ animationDelay: `${index * 60}ms` }}
     >
-      <div className={styles.infraIcon} aria-hidden="true">
-        <Icon className={styles.infraIconSvg} />
+      <div className={styles.infraMedia} aria-hidden="true">
+        <Image
+          src={item.imageSrc}
+          alt={item.imageAlt}
+          fill
+          className={styles.infraMediaImage}
+          sizes="(max-width: 719px) 100vw, (max-width: 1039px) 50vw, 33vw"
+        />
+
+        <div className={styles.infraBadge} aria-hidden="true">
+          <Icon className={styles.infraBadgeIcon} />
+        </div>
       </div>
-      <div>
+
+      <div className={styles.infraBody}>
         <h4 className={styles.infraTitle}>{item.title}</h4>
         <p className={styles.infraDesc}>{item.description}</p>
       </div>

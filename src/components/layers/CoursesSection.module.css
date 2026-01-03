@@ -111,9 +111,67 @@
 
 @media (min-width: 1024px) {
   .courseGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 2rem;
   }
+
+  .courseCard {
+    grid-column: span 2;
+  }
+
+  /* Center the second row when we have 5 cards */
+  .courseCard:nth-child(4) {
+    grid-column: 2 / span 2;
+  }
+
+  .courseCard:nth-child(5) {
+    grid-column: 4 / span 2;
+  }
+}
+
+/* Section Illustration */
+.mediaRow {
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 1024px) {
+  .mediaRow {
+    margin-bottom: 2.5rem;
+  }
+}
+
+.mediaCard {
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.45) 0%, hsla(0, 0%, 6%, 0.75) 100%);
+  border: 1px solid hsla(0, 0%, 18%, 0.5);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+@media (min-width: 1024px) {
+  .mediaCard {
+    border-radius: 1rem;
+  }
+}
+
+.mediaImageWrap {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 1.25rem;
+}
+
+@media (min-width: 1024px) {
+  .mediaImageWrap {
+    padding: 2rem;
+  }
+}
+
+.mediaImage {
+  width: 100%;
+  max-width: 40rem;
+  height: auto;
+  opacity: 0.95;
 }
 
 /* Course Card */
@@ -156,6 +214,29 @@
   transform: translateY(-6px) scale(1.02);
   border-color: hsla(45, 100%, 50%, 0.3);
   box-shadow: 0 20px 40px hsla(0, 0%, 0%, 0.4), 0 0 30px hsla(45, 100%, 50%, 0.15);
+}
+
+/* Card Image */
+.cardMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border: 1px solid hsla(0, 0%, 18%, 0.5);
+  background: linear-gradient(145deg, hsla(0, 0%, 12%, 0.45) 0%, hsla(0, 0%, 6%, 0.75) 100%);
+}
+
+@media (min-width: 1024px) {
+  .cardMedia {
+    border-radius: 1rem;
+    margin-bottom: 1.25rem;
+  }
+}
+
+.cardMediaImage {
+  object-fit: cover;
 }
 
 .cardHead {

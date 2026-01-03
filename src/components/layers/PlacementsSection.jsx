@@ -1,12 +1,61 @@
 import styles from "./PlacementsSection.module.css";
 
-const companies = [
-  "Prime Focus", "DNEG", "Red Chillies VFX", "Technicolor", "MPC", 
-  "Framestore", "Pixar", "DreamWorks", "Ubisoft", "EA Games",
-  "Rockstar Games", "Sony Pictures", "Walt Disney", "Netflix", "Amazon Studios"
+const companyLogos = [
+  {
+    name: "Netflix",
+    src: "https://cdn.worldvectorlogo.com/logos/netflix-4.svg",
+  },
+  {
+    name: "Amazon",
+    src: "https://cdn.worldvectorlogo.com/logos/amazon-icon-1.svg",
+  },
+  {
+    name: "Walt Disney",
+    src: "https://cdn.worldvectorlogo.com/logos/disney-2.svg",
+  },
+  {
+    name: "Sony",
+    src: "https://cdn.worldvectorlogo.com/logos/sony-2.svg",
+  },
+  {
+    name: "Ubisoft",
+    src: "https://cdn.worldvectorlogo.com/logos/ubisoft.svg",
+  },
+  {
+    name: "EA Games",
+    src: "https://cdn.worldvectorlogo.com/logos/ea-sports-1.svg",
+  },
+  {
+    name: "Rockstar Games",
+    src: "https://cdn.worldvectorlogo.com/logos/rockstar-games.svg",
+  },
+  {
+    name: "Pixar",
+    src: "https://cdn.worldvectorlogo.com/logos/pixar.svg",
+  },
+  {
+    name: "DreamWorks",
+    src: "https://cdn.worldvectorlogo.com/logos/dreamworks.svg",
+  },
+  {
+    name: "DNEG",
+    src: "https://cdn.worldvectorlogo.com/logos/dneg.svg",
+  },
+  {
+    name: "Technicolor",
+    src: "https://cdn.worldvectorlogo.com/logos/technicolor.svg",
+  },
+  {
+    name: "Framestore",
+    src: "https://cdn.worldvectorlogo.com/logos/framestore.svg",
+  },
 ];
 
 export default function PlacementsSection() {
+  const midpoint = Math.ceil(companyLogos.length / 2);
+  const firstRow = companyLogos.slice(0, midpoint);
+  const secondRow = companyLogos.slice(midpoint);
+
   return (
     <section id="placements" className={styles.section}>
       <div className={styles.container}>
@@ -26,24 +75,34 @@ export default function PlacementsSection() {
         </div>
       </div>
 
-      {/* Scrolling Logos - Full Width Edge to Edge */}
-      <div className={styles.marqueeWrapper}>
-        {/* First Row */}
-        <div className={styles.marqueeRow}>
-          {[...companies, ...companies, ...companies].map((company, index) => (
-            <div key={`${company}-${index}`} className={styles.companyBadge}>
-              <span className={styles.companyName}>{company}</span>
-            </div>
-          ))}
-        </div>
+      {/* Company Logos (2 lines) */}
+      <div className={styles.container}>
+        <div className={styles.logosWrapper} aria-label="Recruiter company logos">
+          <div className={styles.logosRow}>
+            {firstRow.map((logo) => (
+              <div key={logo.name} className={styles.logoBadge}>
+                <img
+                  className={styles.logoImg}
+                  src={logo.src}
+                  alt={`${logo.name} logo`}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
 
-        {/* Second Row - Reverse Direction */}
-        <div className={styles.marqueeRowReverse}>
-          {[...companies].reverse().concat([...companies].reverse()).concat([...companies].reverse()).map((company, index) => (
-            <div key={`${company}-rev-${index}`} className={styles.companyBadge}>
-              <span className={styles.companyName}>{company}</span>
-            </div>
-          ))}
+          <div className={styles.logosRow}>
+            {secondRow.map((logo) => (
+              <div key={logo.name} className={styles.logoBadge}>
+                <img
+                  className={styles.logoImg}
+                  src={logo.src}
+                  alt={`${logo.name} logo`}
+                  loading="lazy"
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </div>
 

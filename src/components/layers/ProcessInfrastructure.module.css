@@ -174,33 +174,16 @@
 
 .infraCard {
   border-radius: 14px;
-  padding: 16px;
+  padding: 0;
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 12px;
-  align-items: center;
+  grid-template-rows: auto 1fr;
+  gap: 0;
+  overflow: hidden;
   animation: fadeUp 420ms ease forwards;
 }
 
-.infraIcon {
-  width: 42px;
-  height: 42px;
-  border-radius: 12px;
-  background: linear-gradient(
-    145deg,
-    rgba(255, 255, 255, 0.12),
-    rgba(255, 255, 255, 0.04)
-  );
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08);
-  display: grid;
-  place-items: center;
-}
-
-.infraIconSvg {
-  width: 22px;
-  height: 22px;
-  color: var(--accent);
+.infraBody {
+  padding: 16px;
 }
 
 .infraTitle {
@@ -213,6 +196,53 @@
   font-size: 15px;
   color: var(--text-secondary);
   line-height: 1.55;
+}
+
+.infraMedia {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.infraMediaImage {
+  object-fit: cover;
+}
+
+.infraMedia::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.05) 0%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  pointer-events: none;
+}
+
+.infraBadge {
+  position: absolute;
+  left: 14px;
+  bottom: 14px;
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: rgba(15, 22, 38, 0.78);
+  border: 1px solid rgba(251, 191, 36, 0.38);
+  box-shadow: 0 14px 26px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(10px);
+  z-index: 1;
+}
+
+.infraBadgeIcon {
+  width: 22px;
+  height: 22px;
+  color: var(--accent);
 }
 
 /* Breakpoints */
@@ -234,6 +264,10 @@
   .infraGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+
+  .infraBody {
+    padding: 18px;
+  }
 }
 
 @media (min-width: 1040px) {
@@ -247,6 +281,10 @@
 
   .infraGrid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .infraBody {
+    padding: 20px;
   }
 }
 

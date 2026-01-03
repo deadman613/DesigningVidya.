@@ -2,10 +2,10 @@ import { Award, Users, Briefcase, Trophy, Monitor, GraduationCap } from "lucide-
 import styles from "./AboutSection.module.css";
 
 const highlights = [
-  { icon: Award, title: "25+ Years", desc: "Industry Experience" },
+  { icon: Award, title: "8+ Years", desc: "Industry Experience" },
   { icon: Users, title: "200+ Faculty", desc: "Expert Mentors" },
-  { icon: Briefcase, title: "15,000+", desc: "Students Placed" },
-  { icon: Trophy, title: "100+", desc: "Industry Awards" },
+  { icon: Briefcase, title: "1,500+", desc: "Students Placed" },
+  { icon: Trophy, title: "10+", desc: "Industry Awards" },
 ];
 
 export default function AboutSection() {
@@ -25,7 +25,7 @@ export default function AboutSection() {
               <h2 className={styles.heading}>
                 <span className={styles.headingWhite}>Shaping Creative</span>
                 <br />
-                <span className={styles.headingGradient}>Futures Since 1998</span>
+                <span className={styles.headingGradient}>Futures Since 2018</span>
               </h2>
               <p className={styles.description}>
                 Designing Vidya is India&apos;s leading animation, VFX, gaming, and multimedia training institute. 

@@ -89,66 +89,60 @@
 }
 
 /* Marquee */
-.marqueeWrapper {
-  position: relative;
-  overflow: hidden;
+/* Company Logos (2 rows) */
+.logosWrapper {
   padding: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
 }
 
 @media (min-width: 768px) {
-  .marqueeWrapper {
+  .logosWrapper {
     padding: 1.5rem 0;
+    gap: 1rem;
   }
 }
 
-.marqueeRow {
+.logosRow {
   display: flex;
-  animation: marquee 30s linear infinite;
-}
-
-.marqueeRowReverse {
-  display: flex;
-  margin-top: 0.75rem;
-  animation: marquee 35s linear infinite reverse;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem;
 }
 
 @media (min-width: 768px) {
-  .marqueeRowReverse {
-    margin-top: 1rem;
+  .logosRow {
+    gap: 1rem;
   }
 }
 
-.companyBadge {
-  flex-shrink: 0;
-  margin: 0 0.5rem;
-  padding: 0.5rem 1rem;
+.logoBadge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.6rem 0.9rem;
   background-color: hsla(0, 0%, 12%, 0.5);
   border-radius: 0.5rem;
   border: 1px solid hsla(0, 0%, 18%, 0.3);
   transition: border-color 0.2s;
 }
 
-@media (min-width: 768px) {
-  .companyBadge {
-    margin: 0 1rem;
-    padding: 0.75rem 1.5rem;
-  }
-}
-
-.companyBadge:hover {
+.logoBadge:hover {
   border-color: hsla(45, 100%, 50%, 0.5);
 }
 
-.companyName {
-  color: hsl(0, 0%, 98%);
-  font-weight: 600;
-  white-space: nowrap;
-  font-size: 0.75rem;
+.logoImg {
+  display: block;
+  height: 28px;
+  width: auto;
+  max-width: 140px;
 }
 
 @media (min-width: 768px) {
-  .companyName {
-    font-size: 0.875rem;
+  .logoImg {
+    height: 34px;
+    max-width: 160px;
   }
 }
 
@@ -198,7 +192,3 @@
   }
 }
 
-@keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
