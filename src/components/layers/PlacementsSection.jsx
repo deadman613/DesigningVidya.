@@ -63,9 +63,9 @@ export default function PlacementsSection() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <span className={styles.label}>
+          <button className={styles.label}>
             Our Recruiters
-          </span>
+          </button>
           <h2 className={styles.heading}>
             <span className={styles.headingWhite}>Students Get Placed at</span>
             <br />

@@ -132,9 +132,9 @@ export default function ShowcaseSection() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <span className={styles.label}>
+          <button className={styles.label}>
             Student Portfolio
-          </span>
+          </button>
           <h2 className={styles.heading}>
             <span className={styles.headingWhite}>Stunning Work by</span>
             <br />

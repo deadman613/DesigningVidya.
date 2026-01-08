@@ -80,9 +80,9 @@ export default function CoursesSection() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <span className={styles.label}>
+          <button className={styles.label}>
             Our Programs
-          </span>
+          </button>
           <h2 className={styles.heading}>
             <span className={styles.headingWhite}>Kickstart Your Career</span>
             <br />
