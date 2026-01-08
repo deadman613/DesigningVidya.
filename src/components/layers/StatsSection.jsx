@@ -89,9 +89,9 @@ export default function StatsSection() {
       <div className={styles.container}>
         {/* Header */}
         <div className={styles.header}>
-          <span className={styles.label}>
+          <button className={styles.label}>
             Our Achievements
-          </span>
+          </button>
           <h2 className={styles.heading}>
             <span className={styles.headingWhite}>Numbers That</span>
             <span className={styles.headingGradient}> Speak Success</span>
