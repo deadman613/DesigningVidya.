@@ -54,9 +54,9 @@ export function FeaturedCarousel({
   }, [emblaApi, onSelect]);
 
   return (
-    <div className={cn('relative group', className)}>
+    <div className={cn('relative group z-0 isolation-isolate', className)}>
       {/* Carousel Container */}
-      <div className="overflow-hidden rounded-2xl" ref={emblaRef}>
+      <div className="overflow-hidden rounded-2xl bg-neutral-950 z-0" ref={emblaRef}>
         <div className="flex touch-pan-y">
           {items.map((item) => (
             <div
@@ -65,7 +65,7 @@ export function FeaturedCarousel({
             >
               <div className="relative overflow-hidden rounded-xl glass-card group/card cursor-pointer h-full">
                 {/* Image */}
-                <div className="aspect-[4/3] overflow-hidden relative">
+                <div className="aspect-[4/3] overflow-hidden relative bg-neutral-800">
                   <Image
                     src={item.image}
                     alt={item.title}
@@ -73,6 +73,7 @@ export function FeaturedCarousel({
                     sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 ease-out group-hover/card:scale-110"
                     priority={false}
+                    loading="lazy"
                   />
                 </div>
 

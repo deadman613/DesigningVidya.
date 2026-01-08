@@ -9,6 +9,8 @@
   padding-top: 7rem;
   padding-bottom: 3rem;
   overflow: hidden;
+  z-index: 1;
+  isolation: isolate;
 }
 
 @media (min-width: 768px) {
@@ -23,6 +25,10 @@
   position: absolute;
   inset: 0;
   background-color: hsl(0, 0%, 4%);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  will-change: background-image;
 }
 
 /* Geometric Shapes */

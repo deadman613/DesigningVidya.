@@ -49,7 +49,7 @@ const slides = [
 
 export default function CarouselShowcase() {
   return (
-    <section className="bg-neutral-950 text-white py-16 md:py-24" id="carousel">
+    <section className="relative bg-neutral-950 text-white py-16 md:py-24 z-0" id="carousel">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-start justify-between gap-6 mb-10">
           <div>

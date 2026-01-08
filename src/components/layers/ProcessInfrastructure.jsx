@@ -194,7 +194,7 @@ export default function ProcessInfrastructure() {
     <section className={styles.section} aria-labelledby="process-heading">
       <div className={styles.container}>
         <div className={styles.intro}>
-          <p className={styles.kicker}>Our Process</p>
+          <button className={styles.kicker}>Our Process</button>
           <h2 id="process-heading" className={styles.heading}>
             How We Take You from Beginner to Job-<span>Ready Professional</span>
           </h2>
@@ -217,7 +217,7 @@ export default function ProcessInfrastructure() {
         </div>
 
         <div className={styles.infraHeader}>
-          <p className={styles.kicker}>Our Infrastructure</p>
+          <button className={styles.kicker}>Our Infrastructure</button>
           <h3 className={styles.infraHeading}>
             Our learning environment
           </h3>

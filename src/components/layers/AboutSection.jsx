@@ -19,9 +19,9 @@ export default function AboutSection() {
           {/* Left - Content */}
           <div className={styles.leftContent}>
             <div>
-              <span className={styles.label}>
+              <button className={styles.label}>
                 About Us
-              </span>
+              </button>
               <h2 className={styles.heading}>
                 <span className={styles.headingWhite}>Shaping Creative</span>
                 <br />

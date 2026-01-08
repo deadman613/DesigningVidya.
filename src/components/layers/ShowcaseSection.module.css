@@ -3,6 +3,7 @@
   padding: 4rem 0;
   position: relative;
   overflow: hidden;
+  background-color: hsl(0, 0%, 4%);
 }
 
 @media (min-width: 768px) {
@@ -65,6 +66,23 @@
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-size: 0.75rem;
+  background: transparent;
+  border: 2px solid hsl(45, 100%, 50%);
+  padding: 0.5rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+}
+
+.label:hover {
+  color: hsl(0, 0%, 100%);
+  border-color: hsl(45, 100%, 60%);
+  box-shadow: 0 0 20px hsla(45, 100%, 50%, 0.6),
+              0 0 40px hsla(45, 100%, 50%, 0.4),
+              inset 0 0 20px hsla(45, 100%, 50%, 0.2);
+  transform: translateY(-2px);
 }
 
 @media (min-width: 768px) {
@@ -363,6 +381,8 @@
 .viewMoreBtn:hover {
   transform: scale(1.05);
   box-shadow: 0 15px 40px hsla(45, 100%, 50%, 0.4);
+  color:white;
+  
 }
 
 .viewMoreIcon {

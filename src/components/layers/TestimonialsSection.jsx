@@ -134,7 +134,7 @@ export default function TestimonialsSection() {
 
       <div className={styles.container}>
         <div className={styles.header}>
-          <span className={styles.label}>Testimonials</span>
+          <button className={styles.label}>Testimonials</button>
           <h2 className={styles.heading}>
             <span className={styles.headingWhite}>What Our Students Say</span>
             <br />

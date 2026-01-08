@@ -65,7 +65,7 @@ export default function Footer() {
               </a>
               <p className={styles.contactText}>
                 <MapPin className={`${styles.contactIcon} ${styles.contactIconTop}`} />
-                Rohini, Delhi, India
+               2 Floor, Savitri Cinema Complex, Block E, Greater Kailash II, Greater Kailash, New Delhi, Delhi 110048
               </p>
             </div>
 
@@ -100,6 +100,7 @@ export default function Footer() {
             </ul>
           </div>
 
+
           {/* Course Categories */}
           <div className={styles.linksColumn}>
             <h4>Courses</h4>
@@ -113,6 +114,32 @@ export default function Footer() {
               ))}
             </ul>
           </div>
+
+          {/* Visit Us / Map */}
+          <div className={styles.mapColumn}>
+            <h4>Visit Us</h4>
+            <div className={styles.mapCard}>
+             
+              <div className={styles.mapEmbedWrapper}>
+                <iframe
+                  className={styles.mapEmbed}
+                  src="https://maps.google.com/maps?q=2%20Floor%2C%20Savitri%20Cinema%20Complex%2C%20Block%20E%2C%20Greater%20Kailash%20II%2C%20Greater%20Kailash%2C%20New%20Delhi%2C%20Delhi%20110048&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  title="Designing Vidya Location"
+                />
+              </div>
+              <a
+                className={styles.mapLink}
+                href="https://www.google.com/search?q=Designing+Vidya&stick=H4sIAAAAAAAA_-NgU1I1qDC2NEhONTYxTzFPs0gxtzC3AgoZJhuZGZuaJpmapqRaGlguYuV3SS3OTM_LzEtXCMtMqUwEAHv0yr47AAAA&hl=en&mat=CdOJ-9BEGHdJElcBTVDHnqQC4tgS2YBqNycnmO88gK_Zb5_wQXXwHR92YIwxm2hURmL2dvW3-rCBDoypwIgWGTD9MJo5k6k1GVR0HvKV7-DEcO_MHBAQESIPQtEsaBqSUsU&authuser=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                View on Google Maps
+              </a>
+            </div>
+          </div>
+
         </div>
       </div>
 
@@ -129,5 +156,6 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+
   );
 }
