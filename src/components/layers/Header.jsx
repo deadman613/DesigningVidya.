@@ -111,9 +111,9 @@ export default function Header() {
               <a href="#showcase" className={styles.navLink}>
                 Showcase
               </a>
-              <a href="#about" className={styles.navLink}>
-                Learn with us
-              </a>
+              <Link href="/courses" className={styles.navLink}>
+                Coursespage
+              </Link>
               <a href="#placements" className={styles.navLink}>
                 Placements
               </a>
@@ -164,7 +164,7 @@ export default function Header() {
               </div>
               <a href="#showcase" className={styles.mobileNavLink}>Showcase</a>
               <a href="#placements" className={styles.mobileNavLink}>Placements</a>
-              <a href="#about" className={styles.mobileNavLink}>Learn with us</a>
+              <Link href="/courses" className={styles.mobileNavLink}>Learn with us</Link>
               <a href="#blog" className={styles.mobileNavLink}>Life At Vidya</a>
               <button className={styles.mobileApplyBtn}>Apply Now</button>
             </div>
