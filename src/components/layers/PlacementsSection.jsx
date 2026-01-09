@@ -67,9 +67,9 @@ export default function PlacementsSection() {
             Our Recruiters
           </button>
           <h2 className={styles.heading}>
-            <span className={styles.headingWhite}>Students Get Placed at</span>
+            <span className={styles.headingWhite}>Built for the Industry</span>
             <br />
-            <span className={styles.headingGradient}>World&apos;s Top Studios</span>
+            <span className={styles.headingGradient}>You Want to Work In</span>
           </h2>
           <p className={styles.description}>
             Our alumni work at leading VFX studios, gaming companies, and creative agencies worldwide
