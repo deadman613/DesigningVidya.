@@ -16,8 +16,6 @@ const ensureStrongAdminPassword = () => {
   }
 };
 
-ensureStrongAdminPassword();
-
 const getSecret = () => {
   const secret = process.env.ADMIN_SESSION_SECRET;
   if (!secret) {
@@ -44,10 +42,14 @@ const safeEqual = (a, b) => {
 export const validateAdminCredentials = (username, password) => {
   const adminUser = process.env.ADMIN_USERNAME || "admin@example.com";
   const adminPass = process.env.ADMIN_PASSWORD || "";
+  if (!PASSWORD_POLICY.test(adminPass)) {
+    return false;
+  }
   return username === adminUser && password === adminPass;
 };
 
 export const createSessionToken = () => {
+  ensureStrongAdminPassword();
   const csrfToken = crypto.randomBytes(32).toString("hex");
   const issuedAt = Date.now();
   const payload = {

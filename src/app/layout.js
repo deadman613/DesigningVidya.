@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import Header from "@/components/layers/Header";
 import Footer from "@/components/layers/Footer";
 import WhatsAppWidget from "@/components/layers/WhatsAppWidget";
+import ApplyNowAutoPopup from "@/components/layers/ApplyNowAutoPopup";
 import "../styles/globals.css";
 
 const geistSans = Geist({
@@ -77,6 +78,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
         </a>
         <div className="relative bg-black text-white min-h-screen">
           <Header />
+          <ApplyNowAutoPopup initialDelayMs={10000} delayStepMs={5000} />
           {children}
           <Footer />
           <WhatsAppWidget />

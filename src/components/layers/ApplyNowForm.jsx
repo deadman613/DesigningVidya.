@@ -9,6 +9,9 @@ export default function ApplyNowForm({ show, onClose }) {
     email: "",
     center: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState("");
+  const [submitSuccess, setSubmitSuccess] = useState(false);
 
   // Prevent body scroll when form is open
   useEffect(() => {
@@ -42,10 +45,33 @@ export default function ApplyNowForm({ show, onClose }) {
             </button>
           </div>
           <form
-            onSubmit={e => {
+            onSubmit={async (e) => {
               e.preventDefault();
-              // handle submit logic here
-              onClose();
+              setSubmitError("");
+              setSubmitSuccess(false);
+              setIsSubmitting(true);
+              try {
+                const res = await fetch("/api/leads", {
+                  method: "POST",
+                  headers: { "Content-Type": "application/json" },
+                  body: JSON.stringify({
+                    ...formData,
+                    pageUrl: typeof window !== "undefined" ? window.location.href : "",
+                  }),
+                });
+                const data = await res.json().catch(() => null);
+                if (!res.ok || data?.ok === false) {
+                  throw new Error(data?.error || "Failed to submit.");
+                }
+
+                setSubmitSuccess(true);
+                setFormData({ name: "", phone: "", email: "", center: "" });
+                onClose();
+              } catch (err) {
+                setSubmitError(err?.message || "Failed to submit.");
+              } finally {
+                setIsSubmitting(false);
+              }
             }}
             className={styles.form}
           >
@@ -89,8 +115,18 @@ export default function ApplyNowForm({ show, onClose }) {
             <p className={styles.disclaimer}>
               By clicking on &quot;Submit&quot;, I allow the company to call me and send program information on email/sms/phone.
             </p>
+            {submitError ? (
+              <p className={styles.disclaimer} style={{ color: "#fca5a5" }}>
+                {submitError}
+              </p>
+            ) : null}
+            {submitSuccess ? (
+              <p className={styles.disclaimer} style={{ color: "#86efac" }}>
+                Submitted successfully.
+              </p>
+            ) : null}
             <button type="submit" className={styles.submitBtn}>
-              SUBMIT
+              {isSubmitting ? "SUBMITTING..." : "SUBMIT"}
             </button>
           </form>
         </div>

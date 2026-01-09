@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { 
@@ -15,7 +15,7 @@ import {
   Scissors
 } from "lucide-react";
 import styles from "./Header.module.css";
-import ApplyNowForm from "./ApplyNowForm";
+import { openApplyNowForm } from "@/lib/apply-now";
 
 const courses = [
   { name: "Animation", icon: Film, href: "#courses" },
@@ -29,18 +29,18 @@ const courses = [
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isCoursesOpen, setIsCoursesOpen] = useState(false);
-  const [showApplyForm, setShowApplyForm] = useState(false);
-  let dropdownTimeout;
+  const dropdownTimeoutRef = useRef(null);
 
   const handleDropdownLeave = () => {
-    dropdownTimeout = setTimeout(() => {
+    dropdownTimeoutRef.current = setTimeout(() => {
       setIsCoursesOpen(false);
     }, 300);
   };
 
   const handleDropdownEnter = () => {
-    if (dropdownTimeout) {
-      clearTimeout(dropdownTimeout);
+    if (dropdownTimeoutRef.current) {
+      clearTimeout(dropdownTimeoutRef.current);
+      dropdownTimeoutRef.current = null;
     }
     setIsCoursesOpen(true);
   };
@@ -128,10 +128,9 @@ export default function Header() {
                 <Phone className={styles.phoneIcon} />
                 <span className={styles.phoneText}>+91 78272 50823</span>
               </a>
-              <button className={styles.applyBtn} onClick={() => setShowApplyForm(true)}>
+              <button className={styles.applyBtn} onClick={openApplyNowForm}>
                 Apply Now
               </button>
-              <ApplyNowForm show={showApplyForm} onClose={() => setShowApplyForm(false)} />
             </div>
 
             {/* Mobile Menu Button */}
@@ -166,7 +165,16 @@ export default function Header() {
               <a href="#placements" className={styles.mobileNavLink}>Placements</a>
               <Link href="/courses" className={styles.mobileNavLink}>Learn with us</Link>
               <a href="#blog" className={styles.mobileNavLink}>Life At Vidya</a>
-              <button className={styles.mobileApplyBtn}>Apply Now</button>
+              <button
+                type="button"
+                className={styles.mobileApplyBtn}
+                onClick={() => {
+                  openApplyNowForm();
+                  setIsMobileMenuOpen(false);
+                }}
+              >
+                Apply Now
+              </button>
             </div>
           </div>
         )}
