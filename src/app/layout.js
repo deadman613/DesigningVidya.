@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 export const metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000"),
   title: {
-    default: "Multi-site Blog System",
+    default: "designing vedia",
     template: "%s | Multi-site Blog System",
   },
   description: "Reusable Next.js 14 blog template with Prisma, TipTap, and an admin console.",

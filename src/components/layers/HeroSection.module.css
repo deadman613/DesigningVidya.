@@ -548,6 +548,7 @@
 .select:hover {
   border-color: hsla(45, 100%, 50%, 0.35);
   box-shadow: 0 0 0 2px hsla(45, 100%, 50%, 0.08);
+  
 }
 
 .select:focus {
